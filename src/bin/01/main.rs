@@ -17,7 +17,7 @@ fn parse_input(input: &str) -> Result<(Vec<i32>, Vec<i32>)> {
         let mut split = line.split_whitespace();
         let left = split.next().with_context(|| format!("Invalid: {}", line))?;
         let right = split.next().with_context(|| format!("Invalid: {}", line))?;
-        ensure!(split.next() == None, "Invalid: {}", line);
+        ensure!(split.next().is_none(), "Invalid: {}", line);
         Ok((left.parse()?, right.parse()?))
     }
 

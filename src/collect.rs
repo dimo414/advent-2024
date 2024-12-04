@@ -110,6 +110,7 @@ impl Range {
     pub fn len(&self) -> u64 {
         (self.end - self.start) as u64
     }
+    pub fn is_empty(&self) -> bool { self.len() == 0 }
 
     pub fn contains(&self, value: i64) -> bool {
         value >= self.start && value < self.end
